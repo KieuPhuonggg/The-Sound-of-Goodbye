@@ -218,6 +218,19 @@ audio {
 
 
 @keyframes hugFlip {
+  0% {
+    opacity: 1;
+  }
+  99.99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes hugFlip {
   0%, 99.99% { opacity: 1; }
   100% { opacity: 0; }
 }
