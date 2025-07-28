@@ -9,47 +9,20 @@
       href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap"
       rel="stylesheet"
     />
-    <script>
-  
-  const context = new (window.AudioContext || window.webkitAudioContext)();
-
-  const notes = [261.63, 293.66, 329.63, 392.00, 440.00]; 
-  let index = 0;
-
-  function playNote(freq, time, duration = 1.8) {
-    const osc = context.createOscillator();
-    const gain = context.createGain();
-
-    osc.type = "sine"; 
-    osc.frequency.value = freq;
-
-    gain.gain.setValueAtTime(0.2, time);
-    gain.gain.exponentialRampToValueAtTime(0.001, time + duration);
-
-    osc.connect(gain).connect(context.destination);
-    osc.start(time);
-    osc.stop(time + duration);
-  }
-
-  function playLoop() {
-    const now = context.currentTime;
-    for (let i = 0; i < 12; i++) {
-      const freq = notes[index % notes.length];
-      playNote(freq, now + i * 2);
-      index++;
-    }
-    setTimeout(playLoop, 12000); // loop every 12s
-  }
-
-  // Start on first user interaction due to browser policy
-  window.addEventListener("click", () => {
-    if (context.state !== "running") {
-      context.resume();
-    }
-    playLoop();
-  }, { once: true });
-</script>
-
+  <script>
+      const audio = document.getElementById("bg-music");
+      audio.volume = 0;
+      audio.playbackRate = 0.8; 
+      let vol = 0;
+      const fadeIn = setInterval(() => {
+        if (vol < 0.4) {
+          vol += 0.01;
+          audio.volume = vol;
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 300); 
+    </script>
   </head>
   <body>
     <div class="container">
