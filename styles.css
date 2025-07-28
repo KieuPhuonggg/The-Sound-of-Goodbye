@@ -1,0 +1,405 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url("https://i.postimg.cc/026T1ZfQ/image-background.png")
+    no-repeat center center fixed;
+  background-size: cover;
+  color: #f8f9fe;
+  font-family: "EB Garamond", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 10vh 2vw 30vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14vh;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 6vw;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid rgba(255, 255, 255, 0.6);
+  animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite,
+    fadeout 6s ease-in-out 4s forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+@keyframes fadeout {
+  to {
+    opacity: 0;
+  }
+}
+
+p {
+  font-size: 2.5vw;
+  line-height: 3.8vw;
+  margin: 6vh 0;
+}
+
+.scene {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #060709;
+  width: 1440px;
+  height: 900px;
+  box-sizing: border-box;
+}
+
+.image-fade-scene,
+.image-fade-scene-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-fade-scene .fade-wrapper,
+.image-fade-scene-2 .fade-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.image-fade-scene .fade-img,
+.image-fade-scene-2 .fade-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  animation: imageSwitchFour 2s linear infinite;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.image-fade-scene-2 .fade-img {
+  object-position: center 80%;
+}
+
+.image-fade-scene:hover .fade-img,
+.image-fade-scene-2:hover .fade-img {
+  animation-play-state: paused;
+}
+
+.image-fade-scene .fade-img:nth-child(1),
+.image-fade-scene-2 .fade-img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.image-fade-scene .fade-img:nth-child(2),
+.image-fade-scene-2 .fade-img:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.image-fade-scene .fade-img:nth-child(3),
+.image-fade-scene-2 .fade-img:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.image-fade-scene .fade-img:nth-child(4),
+.image-fade-scene-2 .fade-img:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+@keyframes imageSwitchFour {
+  0% {
+    opacity: 1;
+  }
+  24.99% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.image-fade-scene-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #060709;
+  width: 1440px;
+  height: 900px;
+  box-sizing: border-box;
+}
+
+.image-fade-scene-3 .fade-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.fade-img-3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  animation: heartbeatFade 1s ease-in-out infinite alternate;
+  z-index: 10;
+}
+
+.image-fade-scene-3 .fade-img-3:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.image-fade-scene-3 .fade-img-3:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.image-fade-scene-3:hover .fade-img-3 {
+  animation-play-state: paused;
+}
+
+@keyframes heartbeatFade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.heart-cross {
+  background-color: #060709;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1440px;
+  height: 900px;
+  box-sizing: border-box;
+}
+
+.heart-cross img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background-color: #060709;
+}
+
+.hug-scene {
+  position: relative;
+  width: 1440px;
+  height: 900px;
+  background-color: #060709;
+  overflow: hidden;
+}
+
+.hug-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hug-still,
+.hug-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hug-still {
+  z-index: 1;
+  opacity: 1;
+}
+
+.hug-frame {
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hug-scene:hover .hug-still {
+  opacity: 0;
+}
+
+.hug-scene:hover .hug-frame {
+  animation: hugFlip 2.5s steps(1) infinite;
+}
+
+.hug-scene:hover .hug-frame:nth-child(2) {
+  animation-delay: 0s;
+}
+.hug-scene:hover .hug-frame:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.hug-scene:hover .hug-frame:nth-child(4) {
+  animation-delay: 1s;
+}
+.hug-scene:hover .hug-frame:nth-child(5) {
+  animation-delay: 1.5s;
+}
+.hug-scene:hover .hug-frame:nth-child(6) {
+  animation-delay: 2s;
+}
+
+@keyframes hugFlip {
+  0% {
+    opacity: 1;
+  }
+  99.99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.pass-scene {
+  position: relative;
+  width: 1440px;
+  height: 900px;
+  background: url("https://i.postimg.cc/SRRpy7yd/background.png") no-repeat
+    center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.pass-scene img {
+  position: absolute;
+  height: 85%;
+  bottom: 0;
+  object-fit: contain;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 1;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.pass-scene .character-left {
+  left: -40%;
+  animation-name: moveRight;
+}
+
+.pass-scene .character-right {
+  right: -40%;
+  animation-name: moveLeft;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(180%);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-180%);
+  }
+}
+
+.last-scene {
+  position: relative;
+  width: 1440px;
+  height: 900px;
+  background-color: #060709;
+  overflow: hidden;
+}
+
+.last-scene img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: switchLast 1.5s linear infinite;
+}
+
+.last-scene img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.last-scene img:nth-child(2) {
+  animation-delay: 0.75s;
+}
+
+@keyframes switchLast {
+  0% {
+    opacity: 1;
+  }
+  49.99% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.spacer {
+  height: 10vh;
+}
