@@ -66,6 +66,10 @@ p {
   margin: 6vh 0;
 }
 
+audio {
+  display: none;
+}
+
 .scene {
   position: relative;
   overflow: hidden;
