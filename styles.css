@@ -77,9 +77,8 @@ audio {
   justify-content: center;
   align-items: center;
   background-color: #060709;
-  width: 100vh;
-  height: 62.5vh;
-  max-height: 90vh;
+  width: 1440px;
+  height: 900px;
   box-sizing: border-box;
 }
 
